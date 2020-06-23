@@ -1,0 +1,41 @@
+footer {
+  background-color: #343a40;
+  color: #ffffff;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
+  align-items: center;
+  padding: 0 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.footer-brand {
+  color: #ffffff;
+}
+
+#footer-legal {
+  font-size: clamp(11px, 2.25vw, 13px);
+  font-size: min(max(11px, 2.25vw), 13px);
+}
+
+#footer-legal > :first-child {
+  margin-right: 0.5rem;
+}
+
+.social-link {
+  height: 48px;
+  width: 48px;
+  transition: all 300ms ease;
+}
+
+.social-icon {
+  height: 32px;
+  width: 32px;
+  transition: all 300ms ease;
+}
+
+.social-link:hover .social-icon {
+  transition: all 100ms ease;
+  transform: scale(1.1);
+}

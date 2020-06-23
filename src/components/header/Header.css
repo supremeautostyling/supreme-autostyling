@@ -1,0 +1,61 @@
+@media (max-width: 575px) {
+  .main-header {
+    height: 300px;
+  }
+}
+
+@media (min-width: 576px) {
+  .main-header {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-header {
+    height: 500px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-header {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-header {
+    height: 700px;
+  }
+}
+
+.main-header {
+  background-image: url("../../assets/images/cover/foamJeep.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(80%);
+}
+
+#header-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#header-name > .name-text {
+  color: #ffffff;
+  font-size: clamp(38px, 5vw, 64px);
+  font-size: min(max(38px, 5vw), 64px);
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+}

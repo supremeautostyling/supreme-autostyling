@@ -1,0 +1,8 @@
+.package-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-package-page {
+  flex-grow: 1;
+}
