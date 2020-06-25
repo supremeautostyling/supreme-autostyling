@@ -8,7 +8,7 @@ import "./Home.css";
 
 function Home(props) {
   return (
-    <main>
+    <main className="home-main">
       <Services setRef={props.setRef} />
       <Gallery setRef={props.setRef} />
       <About setRef={props.setRef} />

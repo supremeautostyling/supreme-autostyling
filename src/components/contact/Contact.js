@@ -1,71 +1,13 @@
 import React, { Component } from "react";
 import "./Contact.css";
 
-function NameInput() {
-  return (
-    <div className="input-group mb-3 pr-md-2 pr-0">
-      <div className="input-group-prepend">
-        <span className="input-group-text">Name</span>
-      </div>
-      <input type="text" name="name" className="form-control" placeholder="John Doe" required />
-    </div>
-  );
-}
-
-function EmailInput() {
-  return (
-    <div className="input-group mb-3">
-      <div className="input-group-prepend">
-        <span className="input-group-text">Email</span>
-      </div>
-      <input
-        type="email"
-        name="_replyto"
-        className="form-control"
-        placeholder="email@yourAddress.com"
-        required
-      />
-    </div>
-  );
-}
-
-function SubjectInput() {
-  return (
-    <div className="input-group mb-3">
-      <div className="input-group-prepend">
-        <span className="input-group-text">Subject</span>
-      </div>
-      <input
-        type="text"
-        name="_subject"
-        className="form-control"
-        placeholder="What's the message about?"
-        required
-      />
-      <input type="hidden" name="_subject" value="New submission!" />
-    </div>
-  );
-}
-
-function MessageInput() {
-  return (
-    <div className="input-group mb-3">
-      <div className="input-group-prepend">
-        <span className="input-group-text">Message</span>
-      </div>
-      <textarea type="text" name="name" rows="4" className="form-control" required></textarea>
-      <input type="hidden" name="_next" value="/" />
-    </div>
-  );
-}
-
-function SubmitButton() {
-  return (
-    <div className="d-flex justify-content-end">
-      <button className="btn btn-primary">Send</button>
-    </div>
-  );
-}
+const INIT_STATE = {
+  status: null,
+  name: "",
+  _replyto: "",
+  _subject: "",
+  message: "",
+};
 
 class Contact extends Component {
   constructor(props) {
@@ -73,37 +15,122 @@ class Contact extends Component {
 
     this.contactRef = React.createRef();
 
-    this.state = {
-      sendTo: "sup.autostyling@gmail.com",
-    };
+    this.state = { ...INIT_STATE };
   }
 
   componentDidMount() {
     this.props.setRef(this.contactRef.current);
   }
 
+  changeInput = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  submitForm = (e) => {
+    e.preventDefault();
+
+    const { status, ...data } = this.state;
+
+    fetch("https://formspree.io/sup.autostyling@gmail.com", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Network response error");
+        }
+
+        return res.json();
+      })
+      .then((res) => {
+        if (res.ok) {
+          this.setState({
+            status: "success",
+            name: "",
+            _replyto: "",
+            _subject: "",
+            message: "",
+          });
+
+          //setTimeout(() => {}, 2000);
+        } else {
+          this.setState({
+            status: "error",
+          });
+        }
+      })
+      .catch((err) => console.log("Error: ", err));
+  };
+
+  resetStatus = (e) => {
+    this.setState({ status: null });
+  };
+
   render() {
-    const { sendTo } = this.state;
+    const { name, _replyto, _subject, message, status } = this.state;
     return (
       <section id="contact" ref={this.contactRef}>
-        <h1>Contact</h1>
-
-        <form action={`https://formspree.io/${sendTo}`} method="POST">
-          <div className="row no-gutters">
-            <div className="col-md-6">
-              <NameInput />
-            </div>
-
-            <div className="col-md-6">
-              <EmailInput />
-            </div>
+        <div className="d-flex align-items-center">
+          <div className="mr-auto">
+            <h1>Contact</h1>
           </div>
+          {status !== null && (
+            <div
+              className={status === "success" ? "mssg succ" : "mssg err"}
+              onAnimationEnd={this.resetStatus}
+            >
+              <small>{status === "success" ? "Thanks" : "Error"}</small>
+            </div>
+          )}
+        </div>
 
-          <SubjectInput />
+        <form id="contact-form" onSubmit={this.submitForm}>
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            placeholder="John Doe"
+            required
+            value={name}
+            onChange={this.changeInput}
+          />
 
-          <MessageInput />
+          <input
+            type="email"
+            name="_replyto"
+            className="form-control"
+            placeholder="email@yourAddress.com"
+            required
+            value={_replyto}
+            onChange={this.changeInput}
+          />
 
-          <SubmitButton />
+          <input
+            type="text"
+            name="_subject"
+            className="form-control"
+            placeholder="What's the message about?"
+            required
+            value={_subject}
+            onChange={this.changeInput}
+          />
+
+          <textarea
+            name="message"
+            value={message}
+            rows="4"
+            className="form-control"
+            required
+            onChange={this.changeInput}
+          />
+
+          <input type="text" name="_gotcha" style={{ display: "none" }} />
+
+          <button className="btn btn-primary">Send</button>
         </form>
       </section>
     );

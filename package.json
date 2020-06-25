@@ -11,9 +11,12 @@
     "react-dom": "^16.13.1",
     "react-headroom": "^3.0.0",
     "react-image-gallery": "^1.0.7",
+    "react-photo-gallery": "^8.0.0",
     "react-router-dom": "^5.2.0",
     "react-router-transition": "^2.0.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-slick": "^0.26.1",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

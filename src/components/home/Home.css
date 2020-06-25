@@ -1,0 +1,14 @@
+@media (max-width: 575px) {
+  .home-main > section > h1 {
+    margin-left: 1rem;
+  }
+}
+
+.home-main > section > h1 {
+  transition: all 500ms ease;
+  margin-top: 8vw;
+}
+
+.home-main {
+  z-index: 1;
+}

@@ -8,7 +8,11 @@ import "./NavBar.css";
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { expanded: true, activeKey: "" };
+
+    this.state = {
+      expanded: true,
+      activeKey: "",
+    };
   }
 
   componentDidUpdate(prevProps) {
@@ -34,10 +38,10 @@ class NavBar extends Component {
   };
 
   render() {
-    const { activeKey } = this.state;
+    const { activeKey, expanded } = this.state;
     return (
       <div id="headroom-navbar-wrap">
-        <Headroom>
+        <Headroom style={expanded ? {} : { height: "57px" }}>
           <Navbar collapseOnSelect onToggle={this.toggleNav} expand="sm" variant="dark" bg="dark">
             <Navbar.Brand as={NavLink} to="/">
               SAS

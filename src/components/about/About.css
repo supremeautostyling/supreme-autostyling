@@ -1,17 +1,9 @@
+.show-more-wrap {
+  text-align: center;
+}
+
 @media (max-width: 575px) {
-  /*#about {
-    padding: 0.5rem 1rem 5rem;
-  }*/
-}
-
-@media (min-width: 576px) {
-}
-
-@media (min-width: 768px) {
-}
-
-@media (min-width: 992px) {
-}
-
-@media (min-width: 1200px) {
+  .about-text-wrap {
+    margin: 0 1rem;
+  }
 }

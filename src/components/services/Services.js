@@ -51,6 +51,66 @@ const pkgLinks = [
   },
 ];
 
+function PkgTile(props) {
+  const { bgColor, name, alaPrice, description } = props;
+  const bgAdj = bgColor.background.slice(0, bgColor.background.lastIndexOf(","));
+  const bgc = bgAdj + ",1)";
+  return (
+    <div
+      className="pkg-tile"
+      style={{ background: `linear-gradient(187deg, rgba(0,0,0,0.05) 0%, ${bgc} 100%)` }}
+    >
+      <div className="d-flex">
+        <div className="p-1 mr-auto" style={{ background: "rgba(0,0,0,0.7)", borderRadius: "10%" }}>
+          <h4>
+            <span style={{ color: bgc }}>{name}</span>
+            <span className="fas fa-medal" style={{ color: bgc }} />
+          </h4>
+        </div>
+        <div>
+          <h4>${alaPrice}</h4>
+        </div>
+      </div>
+      <p>{description}</p>
+    </div>
+  );
+}
+
+function PkgBtn(props) {
+  const { bgColor, alaPrice, description } = props;
+  const teaser = description.split(" ").slice(0, 4).join(" ");
+  const bgAdj = bgColor.background.slice(0, bgColor.background.lastIndexOf(","));
+  const bgc = bgAdj + ",1)";
+  return (
+    <div
+      className="pkg-btn"
+      style={{
+        border: "3px solid " + bgc,
+        background: bgColor.background,
+        borderRadius: "55%",
+        margin: "0.5rem auto",
+        textAlign: "center",
+        display: "inline-flex",
+        flexWrap: "wrap",
+      }}
+    >
+      <div className="d-flex justify-content-center">
+        <div className="">
+          <h4>
+            <span className="fas fa-medal" style={{ color: bgc }} />
+          </h4>
+        </div>
+        <div>
+          <p>{teaser}...</p>
+        </div>
+        <div>
+          <h4>${alaPrice}</h4>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 class Services extends Component {
   constructor(props) {
     super(props);
@@ -65,24 +125,19 @@ class Services extends Component {
   }
 
   render() {
+    const pkgView = "tile"; // tile || btn
     return (
       <section id="services" ref={this.servicesRef}>
         <h1>Services</h1>
-        {pkgLinks.map((pkg) => (
-          <Link key={pkg.name} to={pkg.route} className="pkg-link">
-            <div className="pkg-tile" style={pkg.bgColor}>
-              <div className="d-flex">
-                <div className="mr-auto">
-                  <h4>{pkg.name}</h4>
-                </div>
-                <div>
-                  <h4>${pkg.alaPrice}</h4>
-                </div>
-              </div>
-              <p>{pkg.description}</p>
-            </div>
-          </Link>
-        ))}
+        <div className="row no-gutters">
+          <div className="col">
+            {pkgLinks.map((pkg) => (
+              <Link key={pkg.name} to={pkg.route} className="pkg-link">
+                {pkgView === "tile" ? <PkgTile {...pkg} /> : <PkgBtn {...pkg} />}
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
     );
   }

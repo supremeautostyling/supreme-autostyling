@@ -1,10 +1,17 @@
 footer {
   background-color: #343a40;
   color: #ffffff;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   height: 56px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -26,16 +33,94 @@ footer {
 .social-link {
   height: 48px;
   width: 48px;
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
 .social-icon {
   height: 32px;
   width: 32px;
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
 .social-link:hover .social-icon {
+  -webkit-transition: all 100ms ease;
+  -o-transition: all 100ms ease;
   transition: all 100ms ease;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.fa-2x {
+  font-size: 1rem;
+}
+
+.footer-icon:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.facebook-square,
+.twitter-square,
+.youtube-square,
+.tiktok-square,
+.instagram-square {
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.fa-2x:hover .facebook-square,
+.twitter-square,
+.youtube-square,
+.tiktok-square,
+.instagram-square {
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.fa-2x:hover .facebook-square {
+  color: #3b5998;
+}
+
+.fa-2x:hover .twitter-square {
+  color: #1da1f2;
+}
+
+.fa-2x:hover .youtube-square {
+  color: #ff0000;
+}
+
+.fa-2x:hover .instagram-square {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+    linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-2x:hover .tiktok-square {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #00f2ea, transparent 50%),
+    radial-gradient(circle farthest-corner at 0 140%, #00f2ea, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #00f2ea, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 20% -50%, #00f2ea, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 0, #ff004f, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 60% -20%, #ff004f, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #ff004f, transparent),
+    linear-gradient(#00f2ea, #00f2ea 30%, #ff004f 50%, #ff004f 70%, #00f2ea 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
