@@ -49,7 +49,7 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="NavBar" />
             <Navbar.Collapse id="NavBar">
               <Nav activeKey={activeKey}>
-                {["#services", "#gallery", "#about", "#contact"].map((link) => (
+                {["#services", "#gallery", "#about", "#contact"].map((link, idx) => (
                   <Nav.Link
                     key={link}
                     href={link}

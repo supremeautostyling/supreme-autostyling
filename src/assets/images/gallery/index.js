@@ -11,8 +11,8 @@ const sideFloor1 = require("./sideFloor1.JPG");
 const sideFloor2 = require("./sideFloor2.JPG");
 const sideFloor3 = require("./sideFloor3.JPG");
 const sideFloor4 = require("./sideFloor4.JPG");
-const whiteTruckExt = require("./whiteTruckExt.jpg");
-const carExt1 = require("./carExt1.JPG");
+//const whiteTruckExt = require("./whiteTruckExt.jpg");
+//const carExt1 = require("./carExt1.JPG");
 
 /*
   export const backFloor1 = require("./backFloor1.jpg");
@@ -46,8 +46,8 @@ const gallery = [
   sideFloor2,
   sideFloor3,
   sideFloor4,
-  whiteTruckExt,
-  carExt1,
+  //whiteTruckExt,
+  //carExt1,
 ];
 
 module.exports = gallery;

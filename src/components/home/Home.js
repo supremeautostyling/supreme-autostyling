@@ -9,7 +9,7 @@ import "./Home.css";
 function Home(props) {
   return (
     <main className="home-main">
-      <Services setRef={props.setRef} />
+      <Services setRef={props.setRef} isMobile={props.isMobile} />
       <Gallery setRef={props.setRef} />
       <About setRef={props.setRef} />
       <Contact setRef={props.setRef} />

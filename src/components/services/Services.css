@@ -1,3 +1,17 @@
+@media (max-width: 575px) {
+  .col-sm-6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .tile-row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .pkg-tile {
     margin-bottom: 1rem;
@@ -7,13 +21,19 @@
 
 .pkg-link {
   color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
 }
 
 .pkg-link:hover {
   text-decoration: none;
+  color: initial;
 }
 
 .pkg-tile {
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
