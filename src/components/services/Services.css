@@ -1,3 +1,9 @@
+@media (min-width: 576px) {
+  .tile-row > .col-sm-6 {
+    margin-bottom: 1rem;
+  }
+}
+
 @media (max-width: 575px) {
   .col-sm-6 {
     padding-left: 0;
@@ -25,15 +31,52 @@
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  -webkit-transition: -webkit-filter 200ms ease;
+  transition: -webkit-filter 200ms ease;
+  -o-transition: filter 200ms ease;
+  transition: filter 200ms ease;
+  transition: filter 200ms ease, -webkit-filter 200ms ease;
+  -webkit-filter: brightness(90%);
+  filter: brightness(90%);
 }
 
 .pkg-link:hover {
   text-decoration: none;
   color: initial;
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
+  -webkit-transition: -webkit-filter 200ms ease;
+  transition: -webkit-filter 200ms ease;
+  -o-transition: filter 200ms ease;
+  transition: filter 200ms ease;
+  transition: filter 200ms ease, -webkit-filter 200ms ease;
 }
 
 .pkg-tile {
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   width: 100%;
+}
+
+#services-header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#services-header > div > div {
+  margin-right: auto;
+}
+
+#services-header > div > small {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+#services-header > div > small > :last-child {
+  font-style: italic;
 }

@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+@import "~react-image-gallery/styles/css/image-gallery.css";
 
-html,
-body {
-  height: 100%;
+html {
+  height: 100vh;
   scroll-behavior: smooth;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -18,4 +25,50 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+}
+
+#root > div {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }

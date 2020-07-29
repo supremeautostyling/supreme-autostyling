@@ -1,18 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
 import SrvPkgLinks from "./SrvPkgLinks.js";
 
 const chunk = (array, size) => {
-  const chunked_arr = [];
-  let index = 0;
+  const chunked = [];
+  let idx = 0;
 
-  while (index < array.length) {
-    chunked_arr.push(array.slice(index, size + index));
-    index += size;
+  while (idx < array.length) {
+    chunked.push(array.slice(idx, size + idx));
+    idx += size;
   }
 
-  return chunked_arr;
+  return chunked;
 };
 
 function PkgTile(props) {
@@ -44,14 +44,15 @@ function PkgTile(props) {
 
 function ServicesHeader(props) {
   return (
-    <div>
-      <h1 className="mr-auto">Services</h1>
-      <div className="d-flex align-items-center mb-3">
-        <p className="mb-0 mr-auto">
-          {props.isMobile ? "Select" : "Click"} a package for more info
-        </p>
-        <small className="text-muted px-1">
-          *Prices shown are <span style={{ fontStyle: "italic" }}>as low as</span>
+    <div id="services-header">
+      <h1>Services</h1>
+
+      <div>
+        <div>Select a package for more info</div>
+
+        <small className="text-muted">
+          <span>*Prices shown are </span>
+          <span>as low as</span>
         </small>
       </div>
     </div>
@@ -59,11 +60,10 @@ function ServicesHeader(props) {
 }
 
 function ServicesLinks(props) {
-  const tileLinks = chunk(SrvPkgLinks, 2);
-  return tileLinks.map((row, i) => (
+  return chunk(SrvPkgLinks, 2).map((row, i) => (
     <div key={"row" + i} className="row tile-row">
       {row.map((pkg) => (
-        <div key={pkg.name} className="col-sm-6 mb-0 mb-sm-3">
+        <div key={pkg.name} className="col-sm-6">
           <Link to={pkg.route} className="pkg-link">
             <PkgTile {...pkg} />
           </Link>
@@ -73,25 +73,13 @@ function ServicesLinks(props) {
   ));
 }
 
-class Services extends Component {
-  constructor(props) {
-    super(props);
-    this.servicesRef = React.createRef();
-  }
-
-  componentDidMount() {
-    // pass ref on mount
-    this.props.setRef(this.servicesRef.current);
-  }
-
-  render() {
-    return (
-      <section id="services" ref={this.servicesRef}>
-        <ServicesHeader isMobile={this.props.isMobile} />
-        <ServicesLinks />
-      </section>
-    );
-  }
+function Services(props) {
+  return (
+    <section id="services">
+      <ServicesHeader />
+      <ServicesLinks />
+    </section>
+  );
 }
 
 export default Services;

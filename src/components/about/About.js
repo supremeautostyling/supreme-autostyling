@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
 import "./About.css";
 
@@ -9,60 +9,36 @@ const txt = [
   "It started as a small side hustle to keep Jaices’ neighborhoods cars clean. This hustle began to expand outside the neighborhood and before Jaice knew it, he had left his normal day job and became a young entrepreneur. He is now serving the city of Cumming and beyond with clean and protected vehicles every day!",
 ];
 
-function AboutText(props) {
-  const { showMore } = props;
+function About() {
+  const [showMore, setMore] = useState(false);
   return (
-    <div className="about-text-wrap">
-      <p>{txt[0]}</p>
+    <section id="about">
+      <h1>About</h1>
 
-      <p className={`${showMore ? "" : "text-muted"}`}>
-        <span>{txt[1]}</span>
-        <span>{props.showMore ? txt[2] : "..."}</span>
-      </p>
+      <div className="about-text-wrap">
+        <p>{txt[0]}</p>
 
-      <Collapse in={showMore}>
-        <div>
-          <div>{txt[3]}</div>
-        </div>
-      </Collapse>
-    </div>
+        <p className={`${showMore ? "" : "text-muted"}`}>
+          <span>{txt[1]}</span>
+          <span>{showMore ? txt[2] : "..."}</span>
+        </p>
+
+        <Collapse in={showMore}>
+          <div>
+            <div>{txt[3]}</div>
+          </div>
+        </Collapse>
+      </div>
+
+      <button
+        className="btn btn-link"
+        title={showMore ? "Show less" : "Show more"}
+        onClick={() => setMore(!showMore)}
+      >
+        {showMore ? "less" : "more"}
+      </button>
+    </section>
   );
-}
-
-class About extends Component {
-  constructor(props) {
-    super(props);
-    this.aboutRef = React.createRef();
-    this.state = { showMore: false };
-  }
-
-  componentDidMount() {
-    // pass ref on mount
-    this.props.setRef(this.aboutRef.current);
-  }
-
-  toggleShowMore = () => {
-    this.setState({ showMore: !this.state.showMore });
-  };
-
-  render() {
-    const { showMore } = this.state;
-    return (
-      <section id="about" ref={this.aboutRef}>
-        <h1>About</h1>
-
-        <AboutText showMore={showMore} />
-
-        <button
-          className="btn btn-link"
-          title={showMore ? "Show less" : "Show more"}
-          onClick={this.toggleShowMore}
-        >
-          {showMore ? "less" : "more"}
-        </button>
-      </section>
-    );
-  }
 }
 
 export default About;

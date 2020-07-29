@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import ImageGallery from "react-image-gallery";
 import gallery from "../../assets/images/gallery/index.js";
-import "./Gallery.css";
 
 const imgGalleryProps = {
   autoPlay: true,
@@ -18,26 +17,14 @@ const imgGalleryProps = {
   slideDuration: 1000,
 };
 
-class Gallery extends Component {
-  constructor(props) {
-    super(props);
+function Gallery() {
+  return (
+    <section id="gallery">
+      <h1>Gallery</h1>
 
-    this.galleryRef = React.createRef();
-  }
-
-  componentDidMount() {
-    this.props.setRef(this.galleryRef.current);
-  }
-
-  render() {
-    return (
-      <section id="gallery" ref={this.galleryRef}>
-        <h1>Gallery</h1>
-
-        <ImageGallery {...imgGalleryProps} />
-      </section>
-    );
-  }
+      <ImageGallery {...imgGalleryProps} />
+    </section>
+  );
 }
 
 export default Gallery;

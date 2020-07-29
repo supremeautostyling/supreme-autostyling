@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import InstagramIcon from "../../assets/images/icons/InstagramIcon.png";
-import TiktokIcon from "../../assets/images/icons/TiktokIcon.png";
 import "./Footer.css";
 
-const dataObj = [
+const iconData = [
   {
     key: "facebook icon",
     url: "https://www.facebook.com/supremeautostyling",
@@ -37,66 +35,26 @@ const dataObj = [
   },
 ];
 
-function ImgIcons() {
-  return (
-    <div id="footer-social">
-      <a
-        href="https://instagram.com/supremeautostylingofficial"
-        target="blank"
-        className="social-link mr-5"
-      >
-        <img src={InstagramIcon} alt="instagram logo" className="social-icon" />
-      </a>
-      <a href="supremeautostyling.com" target="blank" className="social-link">
-        <img src={TiktokIcon} alt="tiktok logo" className="social-icon" />
-      </a>
-    </div>
-  );
-}
-
-function FontIcons(props) {
-  return (
-    <div id="footer-social">
-      {props.icons.map((icon) => (
-        <span key={icon.key} className="fa-stack fa-2x">
-          <span className={icon.parent} />
-          <a aria-label={icon.key} href={icon.url} className={icon.clsNm} target="blank">
-            <span aria-hidden="true" />
-          </a>
-        </span>
-      ))}
-    </div>
-  );
-}
-
 function Footer(props) {
-  const icons =
-    props.icons !== undefined
-      ? props.icons.map((val) => {
-          return dataObj.find((obj) => obj.key.includes(val));
-        })
-      : [];
-  const faIcons = true;
-  return props.sas ? (
-    <footer className="sas-footer">
-      <Link to="/" className="footer-brand">
-        SAS
-      </Link>
+  const { icons = [] } = props;
 
-      <FontIcons icons={icons} />
-
-      <div id="footer-legal" className="d-md-flex d-block">
-        <div>© 2020</div>
-        <div>Supreme Autostyling</div>
-      </div>
-    </footer>
-  ) : (
+  const socialIcons = icons.map((val) => iconData.find((obj) => obj.key.includes(val)));
+  return (
     <footer>
       <Link to="/" className="footer-brand">
         SAS
       </Link>
 
-      {faIcons ? <FontIcons icons={icons} /> : <ImgIcons />}
+      <div id="footer-social">
+        {socialIcons.map((icon) => (
+          <span key={icon.key} className="fa-stack fa-2x">
+            <span className={icon.parent} />
+            <a aria-label={icon.key} href={icon.url} className={icon.clsNm} target="blank">
+              <span aria-hidden="true" />
+            </a>
+          </span>
+        ))}
+      </div>
 
       <div id="footer-legal" className="d-md-flex d-block">
         <div>© 2020</div>

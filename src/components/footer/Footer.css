@@ -110,14 +110,6 @@ footer {
 }
 
 .fa-2x:hover .instagram-square {
-  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
-    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
-    -webkit-gradient(linear, left top, left bottom, from(#6559ca), color-stop(30%, #bc318f), color-stop(50%, #e33f5f), color-stop(70%, #f77638), to(#fec66d));
   background: -o-radial-gradient(35% 90%, circle farthest-corner, #fec564, transparent 50%),
     -o-radial-gradient(0 140%, circle farthest-corner, #fec564, transparent 50%),
     -o-radial-gradient(0 -25%, ellipse farthest-corner, #5258cf, transparent 50%),
@@ -133,6 +125,14 @@ footer {
     radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
     radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
     radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+    -webkit-gradient(linear, left top, left bottom, from(#6559ca), color-stop(30%, #bc318f), color-stop(50%, #e33f5f), color-stop(70%, #f77638), to(#fec66d));
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
     linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -140,14 +140,6 @@ footer {
 }
 
 .fa-2x:hover .tiktok-square {
-  background: radial-gradient(circle farthest-corner at 35% 90%, #00f2ea, transparent 50%),
-    radial-gradient(circle farthest-corner at 0 140%, #00f2ea, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 0 -25%, #00f2ea, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 20% -50%, #00f2ea, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 0, #ff004f, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 60% -20%, #ff004f, transparent 50%),
-    radial-gradient(ellipse farthest-corner at 100% 100%, #ff004f, transparent),
-    -webkit-gradient(linear, left top, left bottom, from(#00f2ea), color-stop(30%, #00f2ea), color-stop(50%, #ff004f), color-stop(70%, #ff004f), to(#00f2ea));
   background: -o-radial-gradient(35% 90%, circle farthest-corner, #00f2ea, transparent 50%),
     -o-radial-gradient(0 140%, circle farthest-corner, #00f2ea, transparent 50%),
     -o-radial-gradient(0 -25%, ellipse farthest-corner, #00f2ea, transparent 50%),
@@ -156,6 +148,14 @@ footer {
     -o-radial-gradient(60% -20%, ellipse farthest-corner, #ff004f, transparent 50%),
     -o-radial-gradient(100% 100%, ellipse farthest-corner, #ff004f, transparent),
     -o-linear-gradient(#00f2ea, #00f2ea 30%, #ff004f 50%, #ff004f 70%, #00f2ea 100%);
+  background: radial-gradient(circle farthest-corner at 35% 90%, #00f2ea, transparent 50%),
+    radial-gradient(circle farthest-corner at 0 140%, #00f2ea, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #00f2ea, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 20% -50%, #00f2ea, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 0, #ff004f, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 60% -20%, #ff004f, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #ff004f, transparent),
+    -webkit-gradient(linear, left top, left bottom, from(#00f2ea), color-stop(30%, #00f2ea), color-stop(50%, #ff004f), color-stop(70%, #ff004f), to(#00f2ea));
   background: radial-gradient(circle farthest-corner at 35% 90%, #00f2ea, transparent 50%),
     radial-gradient(circle farthest-corner at 0 140%, #00f2ea, transparent 50%),
     radial-gradient(ellipse farthest-corner at 0 -25%, #00f2ea, transparent 50%),

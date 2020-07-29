@@ -82,12 +82,12 @@ function EmailForm(props) {
       <input type="text" name="_gotcha" style={{ display: "none" }} />
 
       <div className="d-flex align-items-center">
-        <small className="text-muted font-italic mr-auto">*All fields required</small>
-
-        <button className="btn btn-primary">
+        <button className="btn btn-primary mr-auto">
           <span className="fas fa-paper-plane mr-1" />
           <span>Send</span>
         </button>
+
+        <small className="text-muted font-italic mr-1">*All fields required</small>
       </div>
     </form>
   );
@@ -97,7 +97,7 @@ function SubmitStatus(props) {
   const { status, thanksName } = props;
   return (
     <div className="status-wrap">
-      <div className={`alert alert-${props.status}`}>
+      <div className={`alert alert-${status}`}>
         <div>
           {status === "success"
             ? `Thanks ${thanksName}, I'll get back to you ASAP!`
@@ -111,13 +111,7 @@ function SubmitStatus(props) {
 class Contact extends Component {
   constructor(props) {
     super(props);
-    this.contactRef = React.createRef();
     this.state = { ...INIT_STATE };
-  }
-
-  componentDidMount() {
-    // pass dom ref on mount
-    this.props.setRef(this.contactRef.current);
   }
 
   changeInput = (e) => {
@@ -156,7 +150,7 @@ class Contact extends Component {
   render() {
     const { name, _replyto, _subject, message, status, thanksName } = this.state;
     return (
-      <section id="contact" ref={this.contactRef}>
+      <section id="contact">
         <h1>Contact</h1>
 
         <div className="form-status-wrap">

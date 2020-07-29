@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import packages from "./packages.js";
 import "./PackagePage.css";
@@ -10,10 +10,12 @@ function PkgHeader(props) {
         <div className="mr-auto">
           <h1>{props.name}</h1>
         </div>
+
         <div>
           <h3>${props.alaPrice}</h3>
         </div>
       </div>
+
       <p>{props.description}</p>
     </div>
   );
@@ -75,24 +77,25 @@ function PkgExterior(props) {
   );
 }
 
-class PackagePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const pkg = packages[this.props.match.params.pkg];
-    return (
-      <main className="package-main">
-        <section className="service-package-page">
-          <PkgHeader name={pkg.name} alaPrice={pkg.alaPrice} description={pkg.description} />
-          <PkgInterior interior={pkg.interior} intProtection={pkg.intProtection} />
-          <PkgExterior exterior={pkg.exterior} extProtection={pkg.extProtection} />
-        </section>
-      </main>
-    );
-  }
+function PackagePage(props) {
+  const {
+    name,
+    alaPrice,
+    description,
+    interior,
+    intProtection,
+    exterior,
+    extProtection,
+  } = packages[props.match.params.pkg];
+  return (
+    <main className="package-main">
+      <section className="service-package-page">
+        <PkgHeader name={name} alaPrice={alaPrice} description={description} />
+        <PkgInterior interior={interior} intProtection={intProtection} />
+        <PkgExterior exterior={exterior} extProtection={extProtection} />
+      </section>
+    </main>
+  );
 }
 
 export default withRouter(PackagePage);

@@ -5,7 +5,7 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta name="description" content="Supreme Autostyling - Automotive Detailing Services" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -21,45 +21,9 @@
       crossorigin="anonymous"
     />
     <title>Supreme Autostyling LLC</title>
-    <style>
-      .spinner {
-        height: 5rem;
-        opacity: 1;
-        position: relative;
-        transition: opacity linear 0.1s;
-      }
-
-      .spinner::before {
-        animation: 2s linear infinite spinner;
-        border: solid 3px rgba(0, 0, 0, 0.2);
-        border-bottom-color: rgba(0, 0, 0, 0.6);
-        border-radius: 50%;
-        content: "";
-        height: 5rem;
-        left: 50%;
-        opacity: inherit;
-        position: absolute;
-        transform: translate3d(-50%, -50%, 0);
-        transform-origin: center;
-        width: 5rem;
-        will-change: transform;
-      }
-
-      @keyframes spinner {
-        0% {
-          transform: translate3d(-50%, -50%, 0) rotate(0deg);
-        }
-        100% {
-          transform: translate3d(-50%, -50%, 0) rotate(360deg);
-        }
-      }
-    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <div class="spinner"></div>
-    </div>
-    <!--<script async src="https://www.tiktok.com/embed.js"></script>-->
+    <div id="root"></div>
   </body>
 </html>

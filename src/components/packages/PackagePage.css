@@ -1,3 +1,13 @@
+@media (max-width: 575px) {
+  .package-main {
+    padding: 0 2rem;
+  }
+
+  .package-main > section {
+    padding: 0.5rem 1rem;
+  }
+}
+
 .package-main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,14 +23,6 @@
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-
-@media (max-width: 575px) {
-  .package-main {
-    padding: 0 2rem;
-  }
-
-  .package-main > section {
-    padding: 0.5rem 1rem;
-  }
+  -webkit-animation: fadeIn 1.5s ease forwards;
+  animation: fadeIn 1.5s ease forwards;
 }

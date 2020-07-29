@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# `Supreme Autostyling LLC`
 
-## Available Scripts
+This document gives a high-level overview of how supremeautostylingllc.com was set up.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+- Requirements
+- Project Notes
+- Design Notes
+- Dev Notes
+- Credits
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<hr>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### `Requirements`
 
-### `yarn test`
+List the requirements for the project here, such as CMS, frameworks, plugins, etc.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<hr>
 
-### `yarn build`
+### `Project Notes`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Any project-specific, relevant notes go here. E.g. why you went with a certain plugin.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<hr>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Design Notes`
 
-### `yarn eject`
+This may not be necessary, but if there's something about the design that needs to be noted, put it here.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<hr>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Dev Notes`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This is where dev-specific notes about how things are set up go. Some ideas/examples are listed below.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- gitignore
+- Compiling
+- Source JS files
+- CSS/SASS files
 
-## Learn More
+#### Hacks/Kludges
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. [name]: short description of what & why  
+&emsp;- **When**:&emsp;_date_  
+&emsp;- **File**:  
+&emsp;&emsp;&bull; Line # in [path to file]  
+&emsp;&emsp;&bull; Line # in [path to file]
+<hr>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `Credits`
 
-### Code Splitting
+Designed & built by Jaice Dehning & Jordan Todd
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<hr>

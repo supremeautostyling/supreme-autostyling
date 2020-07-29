@@ -12,6 +12,8 @@ p.text-muted {
   display: block;
   margin: auto;
   position: relative;
+  -webkit-transition: bottom 300ms ease;
+  -o-transition: bottom 300ms ease;
   transition: bottom 300ms ease;
 }
 

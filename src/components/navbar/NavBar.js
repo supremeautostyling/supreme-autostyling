@@ -30,11 +30,19 @@ class NavBar extends Component {
   selectLink = (e, activeKey) => {
     if (this.props.activeNav.startsWith("/")) {
       e.preventDefault();
-
+      window.scrollTo(0, 0);
       this.props.changeRoute(activeKey);
     }
 
     this.setState({ activeKey });
+  };
+
+  goHomeOrTop = (e) => {
+    const {
+      location: { pathname },
+    } = this.props;
+
+    if (pathname === "/") window.scrollTo(0, 0);
   };
 
   render() {
@@ -43,13 +51,13 @@ class NavBar extends Component {
       <div id="headroom-navbar-wrap">
         <Headroom style={expanded ? {} : { height: "57px" }}>
           <Navbar collapseOnSelect onToggle={this.toggleNav} expand="sm" variant="dark" bg="dark">
-            <Navbar.Brand as={NavLink} to="/">
+            <Navbar.Brand as={NavLink} to="/" onClick={this.goHomeOrTop}>
               SAS
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="NavBar" />
             <Navbar.Collapse id="NavBar">
               <Nav activeKey={activeKey}>
-                {["#services", "#gallery", "#about", "#contact"].map((link, idx) => (
+                {["#services", "#gallery", "#about", "#contact"].map((link) => (
                   <Nav.Link
                     key={link}
                     href={link}
