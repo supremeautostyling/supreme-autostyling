@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Collapse from "react-bootstrap/Collapse";
 import "./About.css";
 
@@ -11,8 +11,9 @@ const txt = [
 
 function About() {
   const [showMore, setMore] = useState(false);
+  const aboutRef = useRef(null);
   return (
-    <section id="about">
+    <section id="about" ref={aboutRef}>
       <h1>About</h1>
 
       <div className="about-text-wrap">

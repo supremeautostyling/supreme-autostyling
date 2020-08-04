@@ -29,7 +29,7 @@ const iconData = [
   },
   {
     key: "tiktok icon",
-    url: "https://www.tiktok.com/supremeautostyling",
+    url: "https://www.tiktok.com/@supremeautostyling",
     parent: "fas fa-square fa-stack-2x tiktok-square",
     clsNm: "fab fa-tiktok fa-stack-1x fa-inverse footer-icon",
   },

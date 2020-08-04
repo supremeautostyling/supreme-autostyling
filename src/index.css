@@ -16,6 +16,7 @@ body {
 }
 
 #root {
+  background-color: rgba(52, 58, 64, 1);
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,11 +28,13 @@ body {
   width: 100%;
 }
 
+/* REMOVED BC MESS W/ PKG PAGE HEIGHT/OVERFLOW
 #root > div {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
+*/
 
 @-webkit-keyframes fadeIn {
   from {

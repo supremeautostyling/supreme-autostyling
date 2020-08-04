@@ -16,7 +16,9 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  /* REMOVED BC MESS W/ OVERFLOW....
   height: 100%;
+  */
 }
 
 .service-package-page {

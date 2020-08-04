@@ -5,6 +5,8 @@ import Nav from "react-bootstrap/Nav";
 import Headroom from "react-headroom";
 import "./NavBar.css";
 
+const sectionLinks = ["#services", "#gallery", "#about", "#contact"];
+
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +30,11 @@ class NavBar extends Component {
   };
 
   selectLink = (e, activeKey) => {
-    if (this.props.activeNav.startsWith("/")) {
+    const { activeNav } = this.props;
+    const { pathname } = window.location;
+
+    // condition for manual route control (to scroll to section)
+    if (activeNav.startsWith("/") && pathname.length > 1) {
       e.preventDefault();
       window.scrollTo(0, 0);
       this.props.changeRoute(activeKey);
@@ -57,7 +63,7 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="NavBar" />
             <Navbar.Collapse id="NavBar">
               <Nav activeKey={activeKey}>
-                {["#services", "#gallery", "#about", "#contact"].map((link) => (
+                {sectionLinks.map((link) => (
                   <Nav.Link
                     key={link}
                     href={link}

@@ -10,7 +10,7 @@ const INIT_STATE = {
   message: "", // email text body
 };
 
-const formspree = "https://formspree.io/sup.autostyling@gmail.com";
+const formspree = "https://formspree.io/xoqkrpga";
 
 let opts = {
   method: "POST",
