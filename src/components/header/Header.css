@@ -1,6 +1,6 @@
 .header-img {
-  -webkit-filter: brightness(0.95);
-  filter: brightness(0.95);
+  -webkit-filter: brightness(0.75);
+  filter: brightness(0.75);
 }
 
 .header-img-wrap {
@@ -10,23 +10,23 @@
 
 #header-name {
   position: absolute;
-  left: 2.5vw;
+  left: 4vw;
   -webkit-transform: translateY(5vh);
   -ms-transform: translateY(5vh);
   transform: translateY(5vh);
-  /*z-index: 11;*/
+  z-index: 1;
   color: #ffffff;
-  font-size: 8vw;
-  font-family: "Cinzel";
-  font-weight: 700;
+  font-size: 10vw;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+  animation: fadeIn 1s ease forwards;
 }
 
 .bg-img {
   height: 50vw;
-  background-image: url("../../assets/images/cover/cover.png");
+  background-image: url("../../assets/images/cover/cover.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -34,10 +34,10 @@
   -webkit-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
+  -webkit-filter: brightness(0.75);
+  filter: brightness(0.75);
 }
 
-/*
-#header-wrap {
-  padding: 0 4rem;
+#header-name.hide-name {
+  display: none;
 }
-*/

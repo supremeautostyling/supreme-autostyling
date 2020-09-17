@@ -1,3 +1,5 @@
+import thumbnails from "./thumbnails/index.js";
+
 const backFloor1 = require("./backFloor1.jpg");
 const backFloor2 = require("./backFloor2.jpg");
 const lensFix = require("./lensFix.JPG");
@@ -33,21 +35,21 @@ const sideFloor4 = require("./sideFloor4.JPG");
 */
 
 const gallery = [
-  backFloor1,
-  backFloor2,
-  lensFix,
-  matClose1,
-  matClose2,
-  matClose3,
-  rimClose,
-  seats1,
-  seats2,
-  sideFloor1,
-  sideFloor2,
-  sideFloor3,
-  sideFloor4,
-  //whiteTruckExt,
-  //carExt1,
+  { original: backFloor1, thumbnail: thumbnails[0] },
+  { original: backFloor2, thumbnail: thumbnails[1] },
+  { original: lensFix, thumbnail: thumbnails[2] },
+  { original: matClose1, thumbnail: thumbnails[3] },
+  { original: matClose2, thumbnail: thumbnails[4] },
+  { original: matClose3, thumbnail: thumbnails[5] },
+  { original: rimClose, thumbnail: thumbnails[6] },
+  { original: seats1, thumbnail: thumbnails[7] },
+  { original: seats2, thumbnail: thumbnails[8] },
+  { original: sideFloor1, thumbnail: thumbnails[9] },
+  { original: sideFloor2, thumbnail: thumbnails[10] },
+  { original: sideFloor3, thumbnail: thumbnails[11] },
+  { original: sideFloor4, thumbnail: thumbnails[12] },
+  //{src: whiteTruckExt, thumbnail: thumbnails[13], },
+  //{src: carExt1, thumbnail: thumbnails[14], },
 ];
 
-module.exports = gallery;
+export default gallery;
